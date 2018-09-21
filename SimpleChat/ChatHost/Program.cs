@@ -18,6 +18,7 @@ namespace ChatHost
             try
             {
                 host.AddServiceEndpoint(typeof(IChatService), new BasicHttpBinding(), "Chat");
+                host.AddServiceEndpoint(typeof(IChatService), new BasicHttpBinding(), "RemoteChat");
                 var smb = new ServiceMetadataBehavior();
                 smb.HttpGetEnabled = true;
                 host.Description.Behaviors.Add(smb);
